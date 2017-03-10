@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="padding-left:15%">
+      <h2>Your rank</h2><br> {{myrank}}
+    </div>
+    <div class="col-sm-4" style="padding-left:15%">
+      <h2>Your score</h2><br> {{myscore}}
+    </div>
+  </div>
+  <div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Score</th>
+<th>Rank</th>
+<th>Finished</th>
+
+</tr>
+</thead>
+<tbody>
+
+<tr *ngFor="let rank of leaders">
+<td>{{rank.name}}</td>
+<td>{{rank.score}}</td>
+<td>{{rank.rank}}</td>
+<td>{{rank.finished}}</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+
+
+</div>
