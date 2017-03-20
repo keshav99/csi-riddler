@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>CSI Riddler</title>
+    <title>Riddler 5.0</title>
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
-
+    <script src="app/profile.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
@@ -35,8 +35,9 @@
         <nav class="menu">
           <a href="#"  style="color:white;">Invite</a>
           <a href="#"  style="color:white;">Rules</a>
-          <a data-toggle="modal" data-target="#leaders" id="leader" style="color:white;">Leaderboard</a>
-          <a data-toggle="modal" data-target="#signin" id="sign" style="color:white;">*Name*</a>
+          <a href="#" data-toggle="modal" data-target="#leaders" id="leader" style="color:white;">Leaderboard</a>
+          <a href="#" data-toggle="modal" data-target="#signin" id="sign" style="color:white;">Sign in</a>
+          <a href="api/task/58bedf07f36d2837b811c5e9" id="poker" style="color:white;"></a>
         </nav>
 
       </header>
@@ -46,7 +47,6 @@
       </div>
 
       <div class="site-cache" id="site-cache"></div>
-
 
 </div>
 </div>

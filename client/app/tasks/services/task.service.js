@@ -31,7 +31,7 @@ var TaskService = (function () {
         return this.http.delete('/api/task/' + id)
             .map(function (res) { return res.json(); });
     };
-    TaskService.prototype.updateStatus = function (task) {
+    TaskService.prototype.updateTask = function (task) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.put('/api/task/' + task._id, JSON.stringify(task), { headers: headers })
@@ -47,8 +47,34 @@ var TaskService = (function () {
         return this.http.post('/api/rank', JSON.stringify(newrank), { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    TaskService.prototype.updateRank = function (rank) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/rank/' + rank._id, JSON.stringify(rank), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     TaskService.prototype.deleterank = function (id) {
         return this.http.delete('/api/rank/' + id)
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.getquestions = function () {
+        return this.http.get('/api/questions')
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.addquestions = function (newques) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/questions', JSON.stringify(newques), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.deletequestion = function (id) {
+        return this.http.delete('/api/question/' + id)
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.updateQues = function (Ques) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/question/' + Ques._id, JSON.stringify(Ques), { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return TaskService;

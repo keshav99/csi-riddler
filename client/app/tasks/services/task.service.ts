@@ -25,7 +25,7 @@ export class TaskService{
             .map(res => res.json());
     }
 
-    updateStatus(task){
+    updateTask(task){
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.put('/api/task/'+task._id, JSON.stringify(task), {headers: headers})
@@ -33,7 +33,7 @@ export class TaskService{
     }
 
     getranks(){
-        
+
         return this.http.get('/api/ranks')
             .map(res => res.json());
 
@@ -46,10 +46,44 @@ export class TaskService{
             .map(res => res.json());
     }
 
+    updateRank(rank){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/rank/'+rank._id, JSON.stringify(rank), {headers: headers})
+            .map(res => res.json());
+    }
+
     deleterank(id){
         return this.http.delete('/api/rank/'+id)
             .map(res => res.json());
     }
+
+    getquestions(){
+      return this.http.get('/api/questions')
+          .map(res => res.json());
+    }
+
+    addquestions(newques){
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      return this.http.post('/api/questions', JSON.stringify(newques), {headers: headers})
+          .map(res => res.json());
+    }
+
+    deletequestion(id){
+      return this.http.delete('/api/question/'+id)
+          .map(res => res.json());
+    }
+
+    updateQues(Ques){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/question/'+Ques._id, JSON.stringify(Ques), {headers: headers})
+            .map(res => res.json());
+    }
+
+
+
 
 
 }

@@ -13,6 +13,7 @@ var forms_1 = require("@angular/forms");
 var mapp_component_1 = require("./mapp.component");
 var task_component_1 = require("./tasks/task.component");
 var leader_component_1 = require("./tasks/leader.component");
+var question_component_1 = require("./question.component");
 var MappModule = (function () {
     function MappModule() {
     }
@@ -21,8 +22,8 @@ var MappModule = (function () {
 MappModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-        declarations: [mapp_component_1.MappComponent, task_component_1.TaskComponent, leader_component_1.LeaderComponent],
-        bootstrap: [mapp_component_1.MappComponent, task_component_1.TaskComponent, leader_component_1.LeaderComponent]
+        declarations: [mapp_component_1.MappComponent, task_component_1.TaskComponent, leader_component_1.LeaderComponent, question_component_1.QuestionComponent],
+        bootstrap: [mapp_component_1.MappComponent, task_component_1.TaskComponent, leader_component_1.LeaderComponent, question_component_1.QuestionComponent]
     })
 ], MappModule);
 exports.MappModule = MappModule;

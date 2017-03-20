@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Leaders = (function () {
     function Leaders() {
-        this.leader = ();
+        this.finished = ();
     }
     return Leaders;
 }());
