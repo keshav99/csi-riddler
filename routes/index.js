@@ -10,7 +10,7 @@ router.get('/signup', function(req, res, next){
 });
 
 router.get('/leaderboard', function(req, res, next){
-  res.render('client/leaderboard.html');
+  res.render('client/app/tasks/leader.component.html');
 });
 
 module.exports= router;

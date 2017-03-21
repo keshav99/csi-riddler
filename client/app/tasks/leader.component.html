@@ -1,31 +1,84 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Riddler 5.0</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../app/styles.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="../../node_modules/core-js/client/shim.min.js"></script>
+    <script src="../../app/profile.js"></script>
+    <script src="../../node_modules/zone.js/dist/zone.js"></script>
+    <script src="../../node_modules/systemjs/dist/system.src.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../css/default.css" />
+    <script src="../../systemjs.config.js"></script>
+    <script>
+      System.import('../../app/main.js').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <body>
+    <div class="bg-img"></div>
+
+    <div class="site-container">
+    <div class="site-pusher">
+
+      <header class="header" style="z-index: 10;">
+
+        <a href="#" class="header__icon" id="header__icon"></a>
+        <a href="#" class="map__icon" id="map__icon"></a>
+        <img class="header__logo"  style="color:white;margin:5px;" height="60px" src="r_logo_lt.png">
+
+
+        <nav class="menu">
+          <a  style="color:white;">Invite</a>
+          <a style="color:white;">Rules</a>
+          <a data-toggle="modal" data-target="#leader" id="lead" style="color:white;">Leaderboard</a>
+          <a data-toggle="modal" data-target="#signin" id="sign" style="color:white;">Sign in</a>
+          <a href="api/task/58bedf07f36d2837b811c5e9" id="poker" style="color:white;"></a>
+        </nav>
+
+      </header>
+
+      <div class="site-content">
 <div class="container">
   <div class="row">
-    <div class="col-sm-6" style="padding-left:15%">
-      <h2>Your rank</h2><br> {{myrank}}
+    <div class="col-sm-6" style="float: center; text-align: center">
+      <h2>Your rank</h2><br><h1> 72</h1>
     </div>
-    <div class="col-sm-4" style="padding-left:15%">
-      <h2>Your score</h2><br> {{myscore}}
+    <div class="col-sm-4" style="float: center; text-align: center">
+      <h2>Your score</h2><br> <h1>3</h1>
     </div>
   </div>
   <div class="table-responsive">
-<table class="table">
+<table class="table" style="text-align: center">
 <thead>
 <tr>
-<th>Name</th>
-<th>Score</th>
-<th>Rank</th>
-<th>Finished</th>
+<th style="width:50%; text-align: left">Name</th>
+<th style="width: 10%; text-align: center">Rank</th>
+<th style="width: 10%; text-align: center">Score</th>
 
 </tr>
+
 </thead>
 <tbody>
 
 <tr *ngFor="let rank of leaders">
-<td>{{rank.name}}</td>
-<td>{{rank.score}}</td>
-<td>{{rank.rank}}</td>
-<td>{{rank.finished}}</td>
+<td>Adithi</td>
+<td>72</td>
+<td>3
+</tr>
+<tr *ngFor="let rank of leaders">
+<td>Adithi</td>
+<td>72</td>
+<td>3
 </tr>
 
 
@@ -36,3 +89,10 @@
 
 
 </div>
+</div>
+
+<div class="site-cache" id="site-cache"></div>
+
+</div>
+</div>
+</body>
