@@ -6,7 +6,7 @@ import { Leaders } from '../leader';
 @Component({
   moduleId: module.id,
   selector: 'questions',
-  styleUrls: ['./styles.css'],
+  styleUrls: ['styles.css'],
   templateUrl:'question.component.html',
   providers: [TaskService]
 })

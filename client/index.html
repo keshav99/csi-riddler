@@ -17,6 +17,7 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
     <script src="systemjs.config.js"></script>
     <script>
       System.import('./app/main.js').catch(function(err){ console.error(err); });
@@ -24,18 +25,22 @@
   </head>
 
   <body>
+    <div class="bg-img"></div>
+
     <div class="site-container">
     <div class="site-pusher">
 
-      <header class="header">
+      <header class="header" style="z-index: 10;">
 
         <a href="#" class="header__icon" id="header__icon"></a>
-        <a href="#" class="header__logo"  style="color:white;padding-right:50%;">Riddler</a>
+        <a href="#" class="map__icon" id="map__icon"></a>
+        <img class="header__logo"  style="color:white;margin:5px;" height="60px" src="r_logo_lt.png">
+
 
         <nav class="menu">
           <a href="#"  style="color:white;">Invite</a>
           <a href="#"  style="color:white;">Rules</a>
-          <a href="#" data-toggle="modal" data-target="#leaders" id="leader" style="color:white;">Leaderboard</a>
+          <a href="#" data-toggle="modal" data-target="#leader" id="lead" style="color:white;">Leaderboard</a>
           <a href="#" data-toggle="modal" data-target="#signin" id="sign" style="color:white;">Sign in</a>
           <a href="api/task/58bedf07f36d2837b811c5e9" id="poker" style="color:white;"></a>
         </nav>
@@ -43,7 +48,9 @@
       </header>
 
       <div class="site-content">
+
         <mapp>Loading<mapp>
+
       </div>
 
       <div class="site-cache" id="site-cache"></div>
@@ -52,6 +59,7 @@
 </div>
 
   </body>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <style>
 
@@ -66,7 +74,12 @@
   			$('body').toggleClass('with--sidebar');
   		});
 
-      $('#leader').click(function(e){
+      $('#map__icon').click(function(e){
+  			e.preventDefault();
+  			$('body').toggleClass('maping');
+  		});
+
+      $('#lead').click(function(e){
         e.preventDefault();
   			$('body').toggleClass('with--sidebar');
       });

@@ -8,6 +8,25 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+.bg-img{
+  position: fixed;
+  left: -10px;
+  right: 10px;
+  z-index: -1;
+
+  background-image: url('http://wallpapercave.com/wp/2Pz7D2D.gif');
+  background-repeat: no-repeat;
+  width: 110%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 a {
@@ -52,7 +71,19 @@ a:hover{
   height: 66px;
   line-height: 66px;
   color: #fff;
-  background-color: #3f51b5;
+  background-color: rgba(17, 37, 142, 0.6);
+  border: 0px;
+  box-shadow: 0px 10px 60px rgba(17, 37, 142, 0.6);
+}
+
+a:hover{
+  animation: shadow .3s ease;
+  -webkit-animation: shadow .3s ease;
+}
+
+@keyframes shadow{
+  from{tansform: box-shadow: 0px 10px 60px rgba(17, 37, 142, 0.6);}
+  to{box-shadow: 0px 0px 60px rgba(17, 37, 142, 0.6);}
 }
 
 .header__logo {
@@ -63,17 +94,110 @@ a:hover{
 
 /* MENU */
 .menu {
-  float: left;
+  float: right;
 }
 .menu a {
   padding: 0 10px;
 }
 .menu a:hover {
-  color: #c5cae9;
+  color: rgba(12, 27, 109, 0.8);
+}
+
+#answer
+{
+  position: absolute;
+  float: center;
+  margin-top: 40px;
+  padding-top: 0.415%;
+  padding-bottom: 0.415%;
+  padding-right:55%;
+  margin-right: 0px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  height: 40px;
+
+}
+#answer:hover
+{
+  border: solid 5px #969696;
+}
+
+#answer:hover ~ .bg-img{
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+#submit{
+  position: relative;
+  margin-top: 40px;
+  margin-left: 0px;
+  padding-top: 0.415%;
+  margin-left: 25%;
+  padding-bottom: 0.415%;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  height: 40px;
+}
+
+#Hint{
+  position: relative;
+  margin-top: 1.5%;
+  padding-top: 0.415%;
+  padding-bottom: 0.415%;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  &:hover:after {
+		-webkit-animation: bounceright .3s alternate ease infinite;
+		animation: bounceright .3s alternate ease;
+	}
+}
+
+@keyframes bounceright {
+	from { transform: rotateX(0);; }
+	to   { transform: rotateX(3px); }
 }
 
 /* RESPONSIVE */
-@media only screen and (max-width: 768px) {
+
+@media only screen and (min-width: 760px) {
+  #Hint{
+    margin-left: 15%;
+  }
+  #answer{
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  #Hint{
+    margin-left: 20%;
+  }
+  #answer{
+    margin-left: 10%;
+    padding-right: 20%;
+  }
+  #submit{
+    margin-left: 30%;
+  }
+}
+
+
+
+@media only screen and (max-width: 840px) {
+  #answer{
+    float: center;
+    margin-left: -5%;
+    padding-right:20%;
+  }
+  #submit{
+    margin-left: 25%;
+  }
+  #Hint{
+    margin-left: 10%;
+  }
   .site-pusher,
   .site-container {
     height: 100%;
@@ -93,7 +217,7 @@ a:hover{
     left: 0;
     bottom: 0;
     padding-top: 0;
-    overflow-y: scroll;
+    overflow-y: none;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -109,6 +233,19 @@ a:hover{
     height: 66px;
     cursor: pointer;
   }
+
+  .map__icon {
+    position: relative;
+    display: block;
+    float: right;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+    background-image: url('https://image.flaticon.com/icons/png/128/55/55212.png');
+    background-size: 53px 58px;
+    background-repeat: no-repeat;
+  }
+
   .header__icon:after {
     content: '';
     position: absolute;
@@ -120,14 +257,16 @@ a:hover{
     box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
   }
 
-  
+  body{
+    overflow-y: auto;
+  }
 
   .menu {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: #3849a2;
+    background-color: rgba(17, 37, 142,0.3);
     /*    overflow-y: scroll;
         -webkit-overflow-scrolling: touch;*/
     width: 250px;
@@ -145,6 +284,7 @@ a:hover{
   .with--sidebar .site-pusher {
     -webkit-transform: translateX(250px);
     transform: translateX(250px);
+    background-color: rgbs;
   }
   .with--sidebar .site-cache {
     position: absolute;
@@ -155,8 +295,131 @@ a:hover{
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+  .mapp {
+    position: absolute;
+
+    /*    overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;*/
+    width: 90%;
+    margin-top: -100%;
+    text-align: center;
+
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  .maping .site-pusher {
+    -webkit-transform: translateX(-90%);
+    transform: translateX(-90%);
+  }
+
+
   .img{
     padding: 15px;
     margin:15px;
   }
 }
+
+
+@media only screen and (max-width: 765px) {
+
+    #answer{
+      margin-left: 5%;
+      padding-right: 40%;
+    }
+    #submit{
+      margin-left: 75%;
+    }
+
+    #Hint{
+      margin-left: 45%;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+    #answer{
+      margin-left: 5%;
+      padding-right: 25%;
+    }
+    #submit{
+      margin-left: 75%;
+    }
+
+    #Hint{
+      margin-left: 45%;
+
+    }
+
+}
+
+@media only screen and (max-width: 440px) {
+  #answer{
+    margin-left: -5%;
+    padding-right: 5%;
+  }
+  #submit{
+    margin-left: 50%;
+  }
+  #Hint{
+    margin-left: 25%;
+    margin-top: 20%;
+  }
+
+}
+
+.pop {
+  position: absolute;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @media( max-width: 640px ){
+			position: relative;
+      width: 100%;
+	}
+	.modal {
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+    position: fixed;
+    width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, .5);
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: opacity 500ms ease-in-out;
+		&__inner {
+		  transform: translate(-50%, -50%) scale(.75);
+	    top: 50%;
+	    left: 50%;
+			width: 50%;
+	    background: white;
+	    padding: 30px;
+			position: absolute;
+      color: black;
+			@media( max-width: 640px ){
+				width: 100%;
+			}
+		}
+	}
+
+  label {
+		display: inline-block;
+		cursor: pointer;
+		&.open {
+      color: turquoise;
+	    transition: color 200ms ease-in-out;
+      text-decoration: underline;
+			&:hover {
+				color: paleturquoise;
+			}
+		}
+	}

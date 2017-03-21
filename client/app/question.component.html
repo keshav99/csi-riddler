@@ -1,22 +1,33 @@
 
-<div class="well well-lg" style="z-index:-1;position:relative;"><strong><div id="qnumber"></div></strong>
+<!--<div class="well well-lg" style="z-index:-1;position:relative;"><strong><div id="qnumber"></div></strong>
   <div id="qcontent">
     <tr>
     <td><strong>Question {{curPos}} </strong>{{curQues}}</td>
     <td><img url="http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0032.gif"></td>
     </tr>
   </div>
+</div>-->
+
+<div class="col-sm-2" style="background-color: black;">
 </div>
-<img src="http://alumni.blackpool.ac.uk/files/2015/12/Interview-questions-square-image-1024x768.jpg" style="padding: 10px"
-class="img-responsive" alt="Question here">
+<div class="col-sm-8">
+<img src="http://alumni.blackpool.ac.uk/files/2015/12/Interview-questions-square-image-1024x768.jpg" style="padding: 10px; padding-top: 25px;"
+alt="Question here" class="img-responsive">
+
 <form class="form-inline">
   <div class="form-group">
     <div class="container">
-<input type="text" style="margin-right:2%; padding-right:15%;" class="form-control input-lg" id="answer" placeholder="Type answer here...">
-<button type="button" class="btn btn-info btn-lg" id="submit" data-toggle="modal" data-target="#right">Submit</button>
+<input type="text" id="answer" placeholder="Type answer here...">
+<button type="button" id="submit" data-toggle="modal" data-target="#right">Submit</button>
+<br>
+<button type="button" id="Hint" data-toggle="modal" data-target="#right">Hint</button>
+
 </div>
 </div>
 </form>
+</div>
+<div class="col-sm-2" style="background-color: black;">
+</div>
 <div class="modal fade" id="right" aria-labelledby="right" data-backdrop="false">
   <div class="modal-dialog">
 
