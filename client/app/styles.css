@@ -9,24 +9,26 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+
 }
 
 .bg-img{
   position: fixed;
-  left: -10px;
-  right: 10px;
+  left: -100px;
+  right: 100px;
+  top:-100px;
   z-index: -1;
 
-  background-image: url('http://wallpapercave.com/wp/2Pz7D2D.gif');
+  background-image: url('http://wallpapercave.com/wp/TfKat02.jpg');
   background-repeat: no-repeat;
-  width: 110%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
 
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
 }
 
 a {
@@ -202,17 +204,9 @@ a:hover{
 
 
 @media only screen and (max-width: 900px){
-  #answer{
-    margin-left: -5%;
-  }
-  #submit{
-    margin-left: 30%;
-  }
+
   #Hint{
-    margin-left:10%;
-  }
-  .textQues{
-    margin-left: 50%;
+    margin-left:0%;
   }
 }
 
@@ -222,11 +216,15 @@ a:hover{
     margin-left: -75vm;
   }
   #submit{
-    margin-left: 15%;
+    margin-left: 20%;
   }
   .site-pusher,
   .site-container {
     height: 100%;
+  }
+
+  .datFLine{
+    display:none;
   }
 
   .site-pusher {
@@ -402,7 +400,7 @@ a:hover{
     }
 
     .menu img{
-      margin-left: 40%;
+      margin-left: 45%;
     }
 
 }
@@ -415,6 +413,10 @@ a:hover{
     }
     #submit{
       margin-left: 55%;
+    }
+
+    #Hint{
+      margin-left: 30%;
     }
 
     .menu img{
@@ -434,30 +436,32 @@ a:hover{
       width:60%;
     }
 
-    .menu img{
-      margin-left: 40%;
-    }
 
 }
+@media only screen and (max-width: 480px) {
+  #Hint{
+    margin-left: 20%;
+  }
+}
 
-
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 400px) {
   #answer{
-    margin-left: -10%;
-    padding-right: 0%;
+    margin-left: -6%;
+    width:50%;
   }
   #submit{
-    margin-left: 60%;
+    margin-left: 65%;
     width:40%;
   }
   #Hint{
     margin-left: 20%;
     margin-top: 20%;
   }
-  .menu img{
-    margin-left: 35%;
-  }
 
+}
+
+table-responsive{
+  border: none;
 }
 
 table {
@@ -465,23 +469,25 @@ table {
   max-width: 600px;
   height: 320px;
   border-collapse: collapse;
-  border: 1px solid #38678f;
+  border: 2px solid #38678f;
   margin: 50px auto;
   background: white;
+  border-radius: 2px;
 }
 th {
-  background: steelblue;
+  background: white;
   height: 54px;
   width: 25%;
   font-weight: lighter;
   text-shadow: 0 1px 0 #38678f;
-  color: white;
-  border: 1px solid #38678f;
+  color: #0c093a;
+  border: 2px solid #38678f;
   box-shadow: inset 0px 1px 2px #568ebd;
   transition: all 0.2s;
+  border-radius: 2px;
 }
 tr {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
 }
 tr:last-child {
   border-bottom: 0px;

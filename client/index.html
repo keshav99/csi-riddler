@@ -80,6 +80,7 @@
 		</div>
 	</div>
 </div>
+
   </body>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -91,14 +92,15 @@
     $(document).ready(function(){
       var x=0;
       $("#mania").click(function(){
-        x++;
-        if(x%2!=0){
-          document.location.href='#popup1';
-        }
-        else{
-          document.location.href='#';
-        }
-      });
+       x++;
+       if(x%2!=0){
+         document.location.href='#popup1';
+       }
+       else{
+         document.location.href='#';
+       }
+     });
+
       $("#signup").click(function(){
         document.location.href="app/tasks/signup/signup.html";
       });

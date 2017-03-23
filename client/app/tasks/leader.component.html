@@ -32,8 +32,8 @@
 
       <header class="header" style="z-index: 10;">
 
-        <a href="#" class="header__icon" id="header__icon"></a>
-        <a href="#" class="map__icon" id="map__icon"></a>
+        <a class="header__icon" id="header__icon"></a>
+        <a class="map__icon" id="map__icon"></a>
         <img class="header__logo"  style="color:white;margin:5px;" height="60px" src="r_logo_lt.png">
 
 
@@ -66,20 +66,22 @@
       <div class="site-content">
 <div class="container">
   <div class="row">
+    <div class="col-sm-9">
     <div class="col-sm-6" style="float: center; text-align: center">
       <h2>Your rank</h2><br><h1> 72</h1>
     </div>
     <div class="col-sm-4" style="float: center; text-align: center">
       <h2>Your score</h2><br> <h1>3</h1>
     </div>
-  </div>
-  <div class="table-responsive">
-<table class="table" style="text-align: center">
-<thead>
+
+
+  <div class="table-responsive" style="padding-left:10%; padding-right:20%;">
+<table class="table" style="text-align: center;">
+<thead >
 <tr>
-<th style="width:50%; text-align: left">Name</th>
-<th style="width: 10%; text-align: center">Rank</th>
-<th style="width: 10%; text-align: center">Score</th>
+<th style="width:30%; text-align: left;">Name</th>
+<th style="width: 5%; text-align: center">Rank</th>
+<th style="width: 5%; text-align: center">Score</th>
 
 </tr>
 
@@ -96,20 +98,103 @@
 <td>72</td>
 <td>3
 </tr>
+<tr *ngFor="let rank of leaders">
+<td>Adithi</td>
+<td>72</td>
+<td>3
+</tr>
+<tr *ngFor="let rank of leaders">
+<td>Adithi</td>
+<td>72</td>
+<td>3
+</tr>
+<tr *ngFor="let rank of leaders">
+<td>Adithi</td>
+<td>72</td>
+<td>3
+</tr>
 
 
 </tbody>
 </table>
 </div>
+</div>
+<div class="mapp">
+  <svg width="1px" height="100vh" style="position:absolute;z-index:6;" class="datFLine">
+<rect width="1px" height="100vh" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(255,255,255)" />
+  </svg>
+<div style="height: 100vh; display: block;" class="col-sm-3">
 
-
-
+    <h1 style="color: white;">Map</h1>
+  </div>
 </div>
 </div>
+</div>
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<div style="text-align:center; color:black;">
+			Name<br><br>Score &nbsp&nbsp&nbsp Rank<br><br>Logout
+		</div>
+	</div>
+</div>
+</div>
+
+
 
 <div class="site-cache" id="site-cache"></div>
 
 </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </body>
+<script>
+  $(document).ready(function(){
+    var x=0;
+    $("#mania").click(function(){
+      x++;
+      if(x%2!=0){
+        $(".overlay").css("opacity", "1");
+      }
+      else{
+        $(".overlay").css("opacity", "0");
+      }
+    });
+    $("#signup").click(function(){
+      document.location.href="app/tasks/signup/signup.html";
+    });
+  (function($) {
+
+    $('#header__icon').click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('with--sidebar');
+    });
+
+    $('#map__icon').click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('maping');
+    });
+
+    $('#lead').click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('with--sidebar');
+    });
+
+    $('#sign').click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('with--sidebar');
+    });
+
+    $('#close').click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('with--sidebar');
+    });
+
+    $('#site-cache').click(function(e){
+      $('body').removeClass('with--sidebar');
+    });
+
+  })(jQuery);
+
+});
+</script>
