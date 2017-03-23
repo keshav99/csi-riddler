@@ -6,7 +6,7 @@ router.get('/', function(req, res, next){
 });
 
 router.get('/signup', function(req, res, next){
-  res.render('client/app/tasks/signup/signup.html');
+  res.render('client/signup.html');
 });
 
 router.get('/leaderboard', function(req, res, next){
