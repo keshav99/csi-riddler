@@ -2,7 +2,7 @@
 /* BASE */
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1em;
   line-height: 1.4;
   height: 100%;
@@ -66,7 +66,7 @@ a:hover{
 .textQues{
   text-align: center;
   float: center;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: white;
   display: block;
   font-weight: 400;
@@ -83,9 +83,9 @@ a:hover{
   height: 66px;
   line-height: 66px;
   color: #fff;
-  background-color: rgba(17, 37, 142, 0.6);
+  background-color: rgba(17, 37, 142, 0);
   border: 0px;
-  box-shadow: 0px 10px 60px rgba(17, 37, 142, 0.6);
+  box-shadow: 0px 10px 60px rgba(17, 37, 142, 0);
 }
 
 a:hover{
@@ -105,41 +105,60 @@ a:hover{
 }
 
 /* MENU */
-.menu {
+.menu .tabs{
   float: right;
-}
-.menu a {
-  padding: 0 10px;
   color: aqua;
+  position: relative;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+}
+.menu .tabs:hover{
+  background-color: aqua;
+  color:#fff;
+}
+.roundProfile{
+  border-radius:25px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.menu h4 {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  color: white;
 }
 
-.menu a: hover {
-  background-color: aqua;
+.menu .tabs: hover {
   color: white;
+  background-color: aqua;
+
 }
 
 .mobMenu{
   display: none;
 }
 
+
 #answer
 {
   position: absolute;
-  float: center;
-  margin-top: 100px;
+  float: left;
+  margin-top: 1px;
   padding-top: 0.415%;
   padding-bottom: 0.415%;
-  padding-right:55%;
-  margin-right: 0px;
-
+  padding-right: 20px;
+  margin-left: -100px;
   transition: border 0.3s;
-  height: 46px;
+  height: 43px;
 
 }
 
 #answer:hover
 {
-  border: solid 5px #969696;
+  border: solid 3px rgba(255,255,255,0.1);
 }
 
 #answer:hover ~ .bg-img{
@@ -154,7 +173,7 @@ a:hover{
   position: relative;
   margin-top: 100px;
   padding-top: 0.415%;
-  margin-left: 40%;
+  margin-left: 100px;
   padding-bottom: 0.415%;
   transition: border 0.3s;
   height: 40px;
@@ -163,10 +182,11 @@ a:hover{
 
 #Hint{
   position: relative;
-  margin-top: 5%;
+  margin-top: 10vm;
   padding-top: 0.415%;
   padding-bottom: 0.415%;
   transition: border 0.3s;
+  margin-left:20px;
   &:hover:after {
 		-webkit-animation: bounceright .3s alternate ease infinite;
 		animation: bounceright .3s alternate ease;
@@ -181,33 +201,28 @@ a:hover{
 /* RESPONSIVE */
 
 
-
-@media only screen and (min-width: 760px) {
-  #Hint{
-    margin-left: 20%;
-  }
+@media only screen and (max-width: 900px){
   #answer{
-    margin-left: 20%;
-    padding-right: 20%;
+    margin-left: -5%;
   }
   #submit{
     margin-left: 30%;
   }
+  #Hint{
+    margin-left:10%;
+  }
+  .textQues{
+    margin-left: 50%;
+  }
 }
-
 
 
 @media only screen and (max-width: 840px) {
   #answer{
-    float: center;
-    margin-left: -5%;
-    padding-right:20%;
+    margin-left: -75vm;
   }
   #submit{
-    margin-left: 25%;
-  }
-  #Hint{
-    margin-left: 10%;
+    margin-left: 15%;
   }
   .site-pusher,
   .site-container {
@@ -277,7 +292,7 @@ a:hover{
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(17, 37, 142,0.3);
+    background-color: rgba(17, 37, 142,0);
     /*    overflow-y: scroll;
         -webkit-overflow-scrolling: touch;*/
     width: 100%;
@@ -287,11 +302,32 @@ a:hover{
   .mobMenu{
     display: block;
   }
-  .menu a {
+  .menu h4 {
     display: block;
-    height: 80px;
+    height: 40px;
     text-align: center;
     line-height: 80px;
+  }
+
+  #rank{
+    font-family: 'Algeria', fantasy;
+    font-size:3em;
+    margin-top: 20px;
+  }
+
+  .menu img {
+    display: block;
+    height: 80px;
+    width:80px;
+    margin-left: 45%;
+    margin-top: 10%;
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 80px;
+  }
+  .webView{
+    display:none;
   }
 
   .with--sidebar .site-pusher {
@@ -314,11 +350,13 @@ a:hover{
     /*    overflow-y: scroll;
         -webkit-overflow-scrolling: touch;*/
     width: 90%;
-    margin-top: -100%;
+    top: -80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     text-align: center;
-
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateX(112%);
+    transform: translateX(112%);
   }
 
   .maping .site-pusher {
@@ -338,46 +376,86 @@ a:hover{
 
     #answer{
       margin-left: 5%;
-      padding-right: 40%;
+      padding-right: 30%;
     }
     #submit{
       margin-left: 75%;
     }
 
     #Hint{
-      margin-left: 45%;
+      margin-left: 35%;
+    }
+    .textQues{
+      margin-left: 0%;
     }
 
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 700px) {
 
     #answer{
       margin-left: 5%;
-      padding-right: 25%;
+      padding-right: 10%;
     }
     #submit{
-      margin-left: 65%;
+      margin-left: 55%;
     }
 
-    #Hint{
+    .menu img{
       margin-left: 40%;
-
     }
 
 }
 
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 650px) {
+
+    #answer{
+      margin-left: 5%;
+      padding-right: 5%;
+    }
+    #submit{
+      margin-left: 55%;
+    }
+
+    .menu img{
+      margin-left: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    #answer{
+      margin-left: 0%;
+      padding-right: 0%;
+    }
+    #submit{
+      margin-left: 55%;
+      width:60%;
+    }
+
+    .menu img{
+      margin-left: 40%;
+    }
+
+}
+
+
+@media only screen and (max-width: 420px) {
   #answer{
-    margin-left: 0%;
+    margin-left: -10%;
     padding-right: 0%;
   }
   #submit{
-    margin-left: 50%;
+    margin-left: 60%;
+    width:40%;
   }
   #Hint{
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top: 20%;
+  }
+  .menu img{
+    margin-left: 35%;
   }
 
 }
@@ -480,7 +558,7 @@ td input:focus {
 
 }
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,900);
+@import url('https://fonts.googleapis.com/css?family=Lato');
 * {
   box-sizing: inherit;
   -webkit-transition-property: all;
@@ -509,29 +587,7 @@ p a:hover {
   color: #E1332D;
 }
 
-.btn {
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 45px;
-  margin: 0 auto 0.5em;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  vertical-align: middle;
-  width: 100%;
-}
-@media (min-width: 400px) {
-  .btn {
-    display: inline-block;
-    margin-left: 0.25em;
-  }
-  .btn:nth-of-type(even) {
-    margin-left: 0;
-  }
-}
+
 @media (min-width: 600px) {
   .btn:nth-of-type(even) {
     margin-left: 0.25em;
@@ -546,12 +602,14 @@ p a:hover {
 
 .btn-1 {
   font-weight: 100;
+  z-index: 2;
 }
 .btn-1 svg {
   height: 45px;
   left: 0;
   position: absolute;
   top: 0;
+
   width: 100%;
 }
 @media only screen and (max-width: 440px) {
@@ -566,6 +624,8 @@ p a:hover {
   stroke: #fff;
   stroke-width: 8;
   stroke-dasharray: 222, 0;
+  stroke:#6d29b2;
+  /*fill: rgba(109, 41, 178,0.3);*/
 }
 
 .btn-1:hover {
@@ -578,4 +638,66 @@ p a:hover {
   stroke-dashoffset: 48;
   -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  float:right;
+  z-index:10;
+  padding: 20px;
+  margin-top: 70px;
+  background: #fff;
+  width: 15%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
 }

@@ -26,7 +26,7 @@ TaskComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'tasks',
-        templateUrl: 'task.component.html',
+        templateUrl: 'signup/signup.html',
         providers: [task_service_1.TaskService]
     }),
     __metadata("design:paramtypes", [task_service_1.TaskService])

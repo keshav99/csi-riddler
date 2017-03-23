@@ -5,7 +5,7 @@ import { Tasks } from '../../Task';
 @Component({
   moduleId: module.id,
   selector: 'tasks',
-  templateUrl:'task.component.html',
+  templateUrl:'signup/signup.html',
   providers: [TaskService]
 })
 
